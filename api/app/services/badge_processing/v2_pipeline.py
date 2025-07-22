@@ -202,7 +202,8 @@ class V2UniversalBadgeProcessor:
                 "audio": V2AudioBadgeProcessor(),
                 "resolution": V2ResolutionBadgeProcessor(),
                 "review": V2ReviewBadgeProcessor(),
-                "awards": V2AwardsBadgeProcessor(),
+                # "awards": V2AwardsBadgeProcessor(),
+                "awards": V2FlagBadgeProcessor(),
                 "flag": V2FlagBadgeProcessor()
             }
             
