@@ -35,6 +35,11 @@ const AVAILABLE_BADGES = [
     id: "awards",
     name: "Awards",
     description: "Oscars, Emmys, Golden Globes, etc."
+  },
+  {
+    id: "flag",
+    name: "Audio Latino",
+    description: "Bandera Mexico"
   }
 ]
 
