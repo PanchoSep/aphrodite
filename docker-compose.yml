@@ -36,7 +36,7 @@ services:
 
   # Aphrodite - Complete Application (Frontend + API)
   aphrodite:
-    image: ${APHRODITE_IMAGE:-ghcr.io/jackkerouac/aphrodite:latest}
+    image: .
     pull_policy: always
     restart: unless-stopped
     environment:
@@ -96,7 +96,7 @@ services:
 
   # Celery Worker - Background job processing
   aphrodite-worker:
-    image: ${APHRODITE_IMAGE:-ghcr.io/jackkerouac/aphrodite:latest}
+    image: .
     pull_policy: always
     restart: unless-stopped
     command: ["python3", "-m", "celery", "-A", "celery_app", "worker", "--loglevel=info", "--pool=solo", "--concurrency=1"]
