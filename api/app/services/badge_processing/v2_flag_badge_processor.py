@@ -175,6 +175,6 @@ class V2FlagBadgeProcessor(BaseBadgeProcessor):
                 "enable_image_badges": True,
                 "fallback_to_text": False,
                 "image_padding": 10,
-                "codec_image_directory": "images/flag"  # Carpeta para tus PNG de banderas
+                "codec_image_directory": "/app/assets/images/flag"  # Carpeta para tus PNG de banderas
             }
         }
