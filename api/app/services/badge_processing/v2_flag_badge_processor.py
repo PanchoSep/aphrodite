@@ -176,5 +176,9 @@ class V2FlagBadgeProcessor(BaseBadgeProcessor):
                 "fallback_to_text": False,
                 "image_padding": 10,
                 "codec_image_directory": "/app/images/flag"  # Carpeta para tus PNG de banderas
+            },
+            "Background": {
+                "background_color": "#2C2C2C",
+                "background_opacity": 0
             }
         }
