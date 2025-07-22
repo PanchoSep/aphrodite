@@ -165,7 +165,7 @@ class V2FlagBadgeProcessor(BaseBadgeProcessor):
         """Get V2 default flag badge settings"""
         return {
             "General": {
-                "general_badge_size": 100,
+                "general_badge_size": 300,
                 "general_text_padding": 12,
                 "use_dynamic_sizing": True,
                 "general_badge_position": "bottom-left",  # 👈 aquí defines la posición por defecto
