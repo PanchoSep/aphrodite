@@ -1,3 +1,11 @@
+# ... Etapa de frontend build (antes del FROM python:3.11-slim AS production)
+FROM node:20 AS frontend_build
+
+WORKDIR /app/frontend
+COPY frontend/package.json frontend/package-lock.json ./
+RUN npm install
+COPY frontend/ ./
+RUN npm run build
 # Multi-stage Dockerfile with ARM64 build support
 FROM python:3.11-slim AS production
 
@@ -46,9 +54,10 @@ COPY --chown=aphrodite:aphrodite init-badge-settings-production.py ./
 COPY --chown=root:root docker-entrypoint.sh /docker-entrypoint.sh
 
 # Copy frontend files (pre-built .next directory should exist in repo)
-COPY --chown=aphrodite:aphrodite frontend/.next ./frontend/.next
-COPY --chown=aphrodite:aphrodite frontend/public ./frontend/public
-COPY --chown=aphrodite:aphrodite frontend/package.json ./frontend/package.json
+# Copia el build del frontend
+COPY --chown=aphrodite:aphrodite --from=frontend_build /app/frontend/.next ./frontend/.next
+COPY --chown=aphrodite:aphrodite --from=frontend_build /app/frontend/public ./frontend/public
+COPY --chown=aphrodite:aphrodite --from=frontend_build /app/frontend/package.json ./frontend/package.json
 
 # Create necessary directories with proper permissions
 RUN mkdir -p /app/logs /app/data /app/media /app/assets /app/assets/fonts /app/assets/images \
