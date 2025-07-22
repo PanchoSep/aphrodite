@@ -43,7 +43,7 @@ class V2FlagBadgeProcessor(BaseBadgeProcessor):
             self.logger.info("✅ [V2 FLAG] Settings loaded from PostgreSQL")
 
             # Determina la ruta al PNG de la bandera
-            badge_dir = settings.get("ImageBadges", {}).get("codec_image_directory", "/app/assets/images/flag")
+            badge_dir = settings.get("ImageBadges", {}).get("codec_image_directory", "/app/images/flag")
             badge_path = f"{badge_dir}/flag_{flag_name}.png"
 
             # Verifica existencia
@@ -175,6 +175,6 @@ class V2FlagBadgeProcessor(BaseBadgeProcessor):
                 "enable_image_badges": True,
                 "fallback_to_text": False,
                 "image_padding": 10,
-                "codec_image_directory": "/app/assets/images/flag"  # Carpeta para tus PNG de banderas
+                "codec_image_directory": "/app/images/flag"  # Carpeta para tus PNG de banderas
             }
         }
