@@ -200,7 +200,8 @@ class V2UniversalBadgeProcessor:
             processors = {
                 "audio": V2AudioBadgeProcessor(),
                 "resolution": V2ResolutionBadgeProcessor(),
-                "review": V2ReviewBadgeProcessor(),
+                # "review": V2ReviewBadgeProcessor(),
+                "review": V2AwardsBadgeProcessor(),
                 "awards": V2AwardsBadgeProcessor()
             }
             
