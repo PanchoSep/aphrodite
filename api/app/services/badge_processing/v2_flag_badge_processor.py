@@ -165,7 +165,7 @@ class V2FlagBadgeProcessor(BaseBadgeProcessor):
         """Get V2 default flag badge settings"""
         return {
             "General": {
-                "general_badge_size": 300,
+                "general_badge_size": 200,
                 "general_text_padding": 12,
                 "use_dynamic_sizing": True,
                 "general_badge_position": "bottom-left",  # 👈 aquí defines la posición por defecto
@@ -174,11 +174,16 @@ class V2FlagBadgeProcessor(BaseBadgeProcessor):
             "ImageBadges": {
                 "enable_image_badges": True,
                 "fallback_to_text": False,
-                "image_padding": 10,
+                "image_padding": 3,
                 "codec_image_directory": "/app/images/flag"  # Carpeta para tus PNG de banderas
             },
             "Background": {
                 "background_color": "#2C2C2C",
                 "background_opacity": 0
+            },
+            "Border": {
+                "border_color": "#000000",
+                "border_radius": 10,
+                "border_width": 0
             }
         }
